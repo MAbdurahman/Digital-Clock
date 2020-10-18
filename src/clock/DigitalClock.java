@@ -34,8 +34,8 @@ public class DigitalClock extends javax.swing.JFrame implements Runnable {
                         "CallToThreadStartDuringObjectConstruction"})
     public DigitalClock() {
         initComponents();
-        getContentPane().setBackground(Color.decode("#5E5856"));
-        setLocation(400, 200);
+        getContentPane().setBackground(Color.decode("#201E1D"));
+        setLocation(500, 200);
         setTitle("Digital Clock");
         Image iconImage = Toolkit.getDefaultToolkit().getImage(DigitalClock.
                                         class.getResource("/images/digitalClock.png"));
@@ -49,7 +49,6 @@ public class DigitalClock extends javax.swing.JFrame implements Runnable {
     /**
      * run Method - Overrides the run Method for the Runnable Interface, and defines it to respond 
      * to the running of the clockThread, which runs the digitalClock.
-     * @param Void
      */
     @Override
     @SuppressWarnings("SleepWhileInLoop")
@@ -89,8 +88,8 @@ public class DigitalClock extends javax.swing.JFrame implements Runnable {
     }//end of the run Method
     /**
      * getDayOfWeek Method - Gets the day of week
-     * @param Int - the day of the week is expressed as an integer from 1 to 7
-     * @return String - Returns the day of week as a String from Sunday to Saturday
+     * @param day - the day of the week is expressed as an integer from 1 to 7
+     * @return today - Returns the day of week as a String from Sunday to Saturday
      */
     private String getDayOfWeek(int day) {
         String today;
@@ -125,8 +124,8 @@ public class DigitalClock extends javax.swing.JFrame implements Runnable {
     }//end of the getDayOfWeek Method
     /**
      * getMonth Method - Gets the month of the year
-     * @param Int - the month of year is expressed an integer from 0 to 11
-     * @return String - Returns the month as a String from January to December
+     * @param month - the month of year is expressed an integer from 0 to 11
+     * @return thisMonth - Returns the month as a String from January to December
      */
     private String getMonth(int month) {
         String thisMonth;
@@ -177,8 +176,8 @@ public class DigitalClock extends javax.swing.JFrame implements Runnable {
     }//end of the getMonth Method
     /**
      * getHour Method - Get the hour of the day
-     * @param Int - the hour of day is expressed as an integer from 0 to 23
-     * @return String - Returns the hour of day as a String from 1 to 12.
+     * @param theHour - the hour of day is expressed as an integer from 0 to 23
+     * @return thisHour - Returns the hour of day as a String from 1 to 12.
      */
     private String getHour(int theHour) {
         String thisHour;
@@ -241,9 +240,9 @@ public class DigitalClock extends javax.swing.JFrame implements Runnable {
     }//end of the getHour Method
     /**
      * getAM_PM Method - Gets the before noon (Ante Meridiem - am) and the afternoon
-     * (Post Meridiem - pm) time of the day
-     * @param Int - the time of day is expressed as a '1' or a '0'.
-     * @return String - Returns the String "am" for before noon, or the String "pm"
+     * (Post Meridian - pm) time of the day
+     * @param timeOfDay - the time of day is expressed as a '1' or a '0'.
+     * @return AM_PM - Returns the String "am" for before noon, or the String "pm"
      * for after noon.
      */
     private String getAM_PM(int timeOfDay) {
@@ -332,7 +331,7 @@ public class DigitalClock extends javax.swing.JFrame implements Runnable {
 
     /**
      * main Method - Contains the command line arguments
-     * @param String[] - the command line arguments
+     * @param args - the command line arguments represented as String[]
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
